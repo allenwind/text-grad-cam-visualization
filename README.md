@@ -20,7 +20,7 @@
 $ python3 model_visualization.py
 ```
 
-然后可视化结果写到`results.md`，可以通过命令行`typora results.md`观察结果。Typora可以到https://typora.io/下载安装。
+然后可视化结果写到`results.md`，可以通过命令行`typora results.md`观察结果。Typora可以到 https://typora.io/ 下载安装。
 
 
 
