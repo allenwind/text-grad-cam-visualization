@@ -17,15 +17,19 @@ def get_grad_cam_weights(
         label_id = tf.argmax(y_preds[0])
         label = y_preds[:, label_id]
 
+    # 计算类别对features的梯度
     grads = tape.gradient(label, features)
+    # 获得重要性权重
     pooled_grads = tf.reduce_mean(grads, axis=(0, 1))
 
     features = features.numpy()[0]
     pooled_grads = pooled_grads.numpy()
+    # 根据重要性权重加权平均
     for i in range(pooled_grads.shape[-1]):
         features[:, i] *= pooled_grads[i]
-
     weights = np.mean(features, axis=-1)
+
+    # 归一化处理
     if normalize:
         weights = np.maximum(weights, 0) / np.max(weights)
     return weights
