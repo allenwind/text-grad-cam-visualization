@@ -6,7 +6,8 @@
 
 这里实现基于梯度的CAM，称为Grad-CAM，具体可参看文献[Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/pdf/1610.02391.pdf)。理论上Grad-CAM可以提取任意一层特征层，一般我们选择Pooling层上游最近的特征层。下面的实现和演示是把这种技术引入到NLP中。
 
-
+博客文章[Grad-CAM在NLP可视化中的应用
+](https://allenwind.github.io/blog/13482/)
 
 文本上的热力图，权重即重要性自上而下从左到右逐渐变大，
 
